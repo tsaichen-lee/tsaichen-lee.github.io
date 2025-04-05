@@ -1,10 +1,138 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>你好，GitHub</title>
-  </head>
-  <body>
-    <h1>覺得厲害</h1>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="avatar-box">
+        <img src="avatar.jpg" alt="Avatar">
+      </div>
+      <h1 class="name">Tsai-Chen Lee</h1>
+      <p class="title">Your Title</p>
+
+      <div class="sidebar-contacts">
+        <h3>Contact</h3>
+        <ul class="contact-list">
+          <li><a href="mailto:leeangel1020517@gmail.com">leeangel1020517@gmail.com</a></li>
+          <li><a href="tel:+14166274654">+1 (416) 627-4654</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <button class="navbar-link active" data-nav="about">About</button>
+        <button class="navbar-link" data-nav="resume">Resume</button>
+        <button class="navbar-link" data-nav="portfolio">Portfolio</button>
+      </nav>
+
+      <!-- Pages -->
+      <article class="about section" id="about">
+        <header>
+          <h2>About Me</h2>
+        </header>
+        <section class="about-text">
+          <p>I’m a fourth-year Computer Science student at the University of Toronto with a passion for turning ideas into functional, user-centered web applications. With experience in both frontend and backend development, I’ve built everything from secure API systems to real-time coding platforms. My work blends technical precision with creative problem-solving, and I’m always exploring new ways to make digital experiences smoother and smarter. Feel free to check out my projects, view my resume, or connect with me — I’m always open to new challenges and collaborations.</p>
+        </section>
+      </article>
+
+      <article class="resume section" id="resume" style="display:none;">
+        <header>
+          <h2>Resume</h2>
+        </header>
+        <section class="timeline">
+          <ul class="timeline-list">
+      
+            <li class="timeline-item">
+              <h3>University of Toronto</h3>
+              <p>Computer Science Specialist, Mathematics Minor (Expected 2025)</p>
+              <p>Relevant Courses: Algorithms, SDLC, Cryptography, Object-Oriented Design</p>
+            </li>
+      
+            <li class="timeline-item">
+              <h3>Angular Project – Investment Advisory Website</h3>
+              <p>Ongoing</p>
+              <p>Built frontend with Angular 5 and NgRx/store, developed secure REST APIs, implemented login and access control systems.</p>
+            </li>
+      
+            <li class="timeline-item">
+              <h3>Web Development – Online Code Execution Platform</h3>
+              <p>Sep 2024 – Dec 2024</p>
+              <p>Developed a responsive web app using Next.js and React, added live code execution features, and containerized deployment with Docker.</p>
+            </li>
+      
+            <li class="timeline-item">
+              <h3>Part-Time Data Entry Clerk – LXT</h3>
+              <p>Sep 2024 – Mar 2025</p>
+              <p>Processed multilingual voice data for AI training, ensured accuracy and compliance, and collaborated with global teams.</p>
+            </li>
+      
+            <li class="timeline-item">
+              <h3>Waitress – Gol’s Lanzhou Noodle</h3>
+              <p>Jun 2024 – Sep 2024</p>
+              <p>Provided customer service, handled orders/payments, and worked in a fast-paced team environment.</p>
+            </li>
+      
+            <li class="timeline-item">
+              <h3>Cryptography Workshop – Organizer & Presenter</h3>
+              <p>Dec 2023 – Jan 2024</p>
+              <p>Led a workshop simplifying complex algorithms through hands-on demos and interactive teaching.</p>
+            </li>
+      
+            <li class="timeline-item">
+              <h3>Volunteer – Tzu Chi Foundation</h3>
+              <p>Ongoing</p>
+              <p>Supported event logistics, coordinated team tasks, and ensured a welcoming environment.</p>
+            </li>
+      
+          </ul>
+        </section>
+      </article>
+      
+
+      <article class="portfolio section" id="portfolio" style="display:none;">
+        <header>
+          <h2>Portfolio</h2>
+        </header>
+        <ul class="project-list">
+          <li class="project-item">
+            <a href="zkp.html" target="_blank">Zero-Knowledge Proof</a>
+          </li>
+        </ul>
+      </article>
+
+    
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Your Name. All rights reserved.
+  </footer>
+
+  <script>
+    const navLinks = document.querySelectorAll('.navbar-link');
+    const sections = document.querySelectorAll('.section');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.forEach(btn => btn.classList.remove('active'));
+        link.classList.add('active');
+
+        sections.forEach(section => {
+          section.style.display = section.id === link.dataset.nav ? 'block' : 'none';
+        });
+      });
+    });
+  </script>
+
+</body>
 </html>

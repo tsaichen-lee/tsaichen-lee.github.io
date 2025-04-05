@@ -1,0 +1,267 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-bg: #f5f4f0;
+  --card-bg: #ffffff;
+  --text-color: #111;
+  --accent-color: #d4cbb4;
+  --shadow-color: rgba(0,0,0,0.05);
+  --border-color: #ddd;
+}
+
+body {
+  font-family: 'EB Garamond', serif;
+  background-color: var(--main-bg);
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+main {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  gap: 40px;
+}
+
+/* Sidebar */
+.sidebar {
+  flex: 1;
+  max-width: 280px;
+  background-color: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  position: sticky;
+  top: 40px;
+  height: fit-content;
+}
+
+.sidebar .avatar-box img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.sidebar .name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.sidebar .title {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+/* Main Content */
+.main-content {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.navbar {
+  background-color: var(--card-bg);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px var(--shadow-color);
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar .navbar-link {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--text-color);
+  padding: 8px 16px;
+}
+
+.navbar .navbar-link.active {
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+/* Sections */
+article {
+  background-color: var(--card-bg);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+article header {
+  margin-bottom: 20px;
+}
+
+article h2 {
+  font-size: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.about-text p {
+  margin-bottom: 16px;
+}
+
+.skills-list,
+.timeline-list,
+.project-list,
+.contact-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skills-item,
+.timeline-item,
+.project-item {
+  margin-bottom: 20px;
+}
+
+.skill-progress-bg {
+  width: 100%;
+  background-color: #eee;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-progress-fill {
+  height: 100%;
+  background-color: var(--accent-color);
+  width: 0;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: relative;
+    top: 0;
+  }
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ZKP Project Page Styling */
+.zkp-content {
+  display: block; /* Override flex from portfolio layout */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 30px;
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 6px 16px var(--shadow-color);
+}
+
+.zkp-content header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.zkp-content h1 {
+  font-size: 2.0rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.zkp-content section {
+  margin-bottom: 50px;
+}
+
+.zkp-content h3 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+.zkp-content h4 {
+  font-size: 1.2rem;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.zkp-content p {
+  margin-bottom: 1.2rem;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.zkp-content ul,
+.zkp-content ol {
+  margin-left: 20px;
+  margin-bottom: 1.2rem;
+  line-height: 1.7;
+}
+
+.zkp-content li {
+  margin-bottom: 0.5rem;
+}
+
+.zkp-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 20px 0;
+  box-shadow: 0 2px 6px var(--shadow-color);
+}
+
+.zkp-content code {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #f4f4f4;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.zkp-content a {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+.zkp-content em {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .zkp-content {
+    padding: 40px 20px;
+  }
+
+  .zkp-content h1 {
+    font-size: 2rem;
+  }
+
+  .zkp-content h3 {
+    font-size: 1.3rem;
+  }
+}
